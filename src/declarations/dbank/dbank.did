@@ -1,0 +1,6 @@
+service : {
+  calculateFees: () -> () oneway;
+  checkCurrentValueWallet: () -> (float64) query;
+  decrementValue: (float64) -> () oneway;
+  incrementValue: (float64) -> () oneway;
+}
