@@ -5,10 +5,8 @@ import Float "mo:base/Float";
 actor DBank {
 
   stable var currentValue: Float = 500;
-  currentValue := 500;
-  stable var startTime = Time.now();
-  startTime := Time.now();
-  
+  //currentValue := 500;
+  stable var startTime = Time.now();  
 
   public func incrementValue(amount: Float){
     currentValue += amount;

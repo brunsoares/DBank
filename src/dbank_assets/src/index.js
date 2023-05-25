@@ -12,25 +12,21 @@ document.querySelector("form").addEventListener("submit", async function(event){
   const inputTopUp = parseFloat(document.getElementById("input-amount").value);
   const inputWithdraw = parseFloat(document.getElementById("withdraw-amount").value);
 
-  console.log(inputTopUp)
-  console.log(inputWithdraw)
-
   button.setAttribute("disabled", true);
   
-  if(inputTopUp != NaN){
+  if(!isNaN(inputTopUp)){
     await dbank.incrementValue(inputTopUp);
-  } else {
-    console.log("eh ruim")
-  }
-  if(inputWithdraw != NaN){
+  } 
+
+  if(!isNaN(inputWithdraw)){
     await dbank.decrementValue(inputWithdraw);
   }
 
   await dbank.calculateFees();
   
-  clearFields();
-  button.removeAttribute("disabled");
   loadCurrentValue();
+  button.removeAttribute("disabled");
+  clearFields();
   
 });
 
